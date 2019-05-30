@@ -14,7 +14,6 @@ where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. 
 -p 10 means using 10 threads to align reads. <p>
 --pen-noncansplice 1000000 means high penalty for a non-canonical splice site. <p>
 -S input.sam means that the alignments of all reads were stored in the file of 'input.sam'.<p> 
-
 (ii)Take E.coli contigs and RNA-seq reads as a prokaryote example. The alignment of RNA-seq reads could be performed as follows: <p>
 <I>bwa index -a is contigs.fa</I><p>
 <I>bwa mem -t 10 contigs.fa read_1.fq read_2.fq >input.sam </I><p>
@@ -22,21 +21,17 @@ where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. 
 where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. <p>
 -t 10 means using 10 threads to align reads. <p>
 input.sam means that the alignments of all reads were stored in the file of 'input.sam'. <p>
-
 (2)The contig file is also required and should be fasta format, consistent with the subject sequences when alignment. <p>
-
 <b>COMMANDS AND OPTIONS</b><p>
    P_RNA_scaffolder is run via the shell script: P_RNA_scaffolder.sh found in the base installation directory.<p>
-
    Usage info is as follows:<p>
 <b>sh P_RNA_scaffolder.sh -d Program_dir -i input.sam -j contig.fa -F read_1.fa -R read_2.fq </b>
-
 <b>Input options</b><p>
-     -d           the installing direcotry of P_RNA_scaffolder           [        mandatory ] <p>
-     -i           SAM file of RNA-seq alignments to contigs with hisat   [        mandatory ] <p>
-     -j           Pre-assembled contig FASTA file                        [        mandatory ] <p>
-     -F           FASTQ file of left reads                               [        mandatory ] <p>
-     -R           FASTQ file of right reads                              [        mandatory ] <p>
+     -d           the installing direcotry of P_RNA_scaffolder           <b>[        mandatory ]</b> <p>
+     -i           SAM file of RNA-seq alignments to contigs with hisat   <b>[        mandatory ]</b> <p>
+     -j           Pre-assembled contig FASTA file                        <b>[        mandatory ]</b> <p>
+     -F           FASTQ file of left reads                               <b>[        mandatory ]</b> <p>
+     -R           FASTQ file of right reads                              <b>[        mandatory ]</b> <p>
 
 <b>Output options</b><p>
      -o            write all output files to this directory              [ default:      ./ ] <p>
