@@ -8,7 +8,7 @@
 (1)The SAM files are necessary for scaffolding. In eukaryotes, the SAM file was generated using HISAT2 program. In prokaryotes, the paired-end RNA-seq reads were aligned to the contigs using BWA program.<p>
 (i)Take human contigs and RNA-seq reads as an eukaryote example. The alignment of RNA-seq reads could be performed as follows: <p>
 <I>hisat2-build contigs.fa human_hisat</I><p>
-hisat2 -x human_hisat -1 read_1.fq -2 read_2.fq -k 3 -p 10 --pen-noncansplice 1000000 -S input.sam <p>
+<I>hisat2 -x human_hisat -1 read_1.fq -2 read_2.fq -k 3 -p 10 --pen-noncansplice 1000000 -S input.sam </I><p>
 where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. <p>
 -k 3 means report up to 3 alignments per read. <p>
 -p 10 means using 10 threads to align reads. <p>
@@ -16,8 +16,8 @@ where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. 
 -S input.sam means that the alignments of all reads were stored in the file of 'input.sam'.<p> 
 
 (ii)Take E.coli contigs and RNA-seq reads as a prokaryote example. The alignment of RNA-seq reads could be performed as follows: <p>
-bwa index -a is contigs.fa <p>
-bwa mem -t 10 contigs.fa read_1.fq read_2.fq >input.sam <p>
+<I>bwa index -a is contigs.fa</I><p>
+<I>bwa mem -t 10 contigs.fa read_1.fq read_2.fq >input.sam </I><p>
 
 where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. <p>
 -t 10 means using 10 threads to align reads. <p>
@@ -31,29 +31,29 @@ input.sam means that the alignments of all reads were stored in the file of 'inp
    Usage info is as follows:<p>
 <b>sh P_RNA_scaffolder.sh -d Program_dir -i input.sam -j contig.fa -F read_1.fa -R read_2.fq </b>
 
-Input options <p>
+<b>Input options</b><p>
      -d           the installing direcotry of P_RNA_scaffolder           [        mandatory ] <p>
      -i           SAM file of RNA-seq alignments to contigs with hisat   [        mandatory ] <p>
      -j           Pre-assembled contig FASTA file                        [        mandatory ] <p>
      -F           FASTQ file of left reads                               [        mandatory ] <p>
      -R           FASTQ file of right reads                              [        mandatory ] <p>
 
-Output options <p>
+<b>Output options</b><p>
      -o            write all output files to this directory              [ default:      ./ ] <p>
 
-Species options <p>
+<b>Species options</b><p>
      -s           the target species is Eukaryote or Prokaryote          [default:      yes ] <p>
                   (1) yes represents that the target species is Eukaryote. <p>
                   (2) no represents that the target species is Prokaryote. <p>
 
-Two modes selection options <p>
+<b>Two modes selection options</b><p>
      -b            re-align filtered RNA-seq reads to contigs with BLAT  [ default:     yes ] <p>
                    (1) If yes, perform the 'accurate' mode using BLAT to further filter out reads. The 'accurate' scaffolding has higher accuracy and longer running time than the 'fast' mode. <p>
                    (2) If no, perform the 'fast' mode without BLAT re-alignment and this mode is faster than the 'accurate' mode with less accuracy.<p>
      -p            BLAT alignment identity cutoff                        [ default:    0.90 ] <p>
      -t            number of threads used in BLAT re-alignment           [ default:       5 ] <p>
 
-Scaffolding options <p>
+<b>Scaffolding options</b><p>
      -e            the maximal allowed intron length                     [ default:  100000 ] <p>
                    For genomes of different size, the maximal allowed intron length is different. For instance, in human, the maximal allowed intron length is set as 100000 while in C.elegans, it is set as 15000. <p> 
      -f            the minimal supporting RNA-seq pair number            [ default:       2 ] <p>
