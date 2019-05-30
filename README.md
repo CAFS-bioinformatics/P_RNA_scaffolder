@@ -48,19 +48,14 @@ Species options <p>
 
 Two modes selection options <p>
      -b            re-align filtered RNA-seq reads to contigs with BLAT  [ default:     yes ] <p>
-                   (1) If yes, perform the 'accurate' mode using BLAT to further filter <p>
-                   out reads. The 'accurate' scaffolding has higher accuracy and longer <p>
-                   running time than the 'fast' mode. <p>
-                   (2) If no, perform the 'fast' mode without BLAT re-alignment and this mode <p>
-                   is faster than the 'accurate' mode with less accuracy. <p>
+                   (1) If yes, perform the 'accurate' mode using BLAT to further filter out reads. The 'accurate' scaffolding has higher accuracy and longer running time than the 'fast' mode. <p>
+                   (2) If no, perform the 'fast' mode without BLAT re-alignment and this mode is faster than the 'accurate' mode with less accuracy.<p>
      -p            BLAT alignment identity cutoff                        [ default:    0.90 ] <p>
      -t            number of threads used in BLAT re-alignment           [ default:       5 ] <p>
 
 Scaffolding options <p>
      -e            the maximal allowed intron length                     [ default:  100000 ] <p>
-                   For genomes of different size, the maximal allowed intron length is <p>
-                   different. For instance, in human, the maximal allowed intron length is  <p>
-                   set as 100000 while in C.elegans, it is set as 15000. <p> 
+                   For genomes of different size, the maximal allowed intron length is different. For instance, in human, the maximal allowed intron length is set as 100000 while in C.elegans, it is set as 15000. <p> 
      -f            the minimal supporting RNA-seq pair number            [ default:       2 ] <p>
      -n            the number of inserted N to indicate a gap            [ default:  100 bp ] <p>
 <b>OUTPUT FILES</b><p>
