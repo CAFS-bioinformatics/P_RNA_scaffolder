@@ -1,19 +1,14 @@
 DESCRIPTION <p>
    P_RNA_scaffolder is a genome scaffolding tool with paired-end RNA-seq reads from studied species. Since the nucleotide sequences are not conserved across species, P_RNA_scaffolder does not support using paired-end RNA-seq from close speciess to scaffold the genome of studied species. The paired-end RNA-seq reads could be downloaed from public read archive database (for instance, NCBI SRA database) or be your own data. The paired-end reads are aligned to contigs using HISAT2 or BWA firstly and then BLAT. The SAM alignment files by HISAT2 or BWA are used as the input files of P_RNA_scaffolder. P_RNA_scaffolder searches "guide" pairs, two reads of which were mapped to two different contigs. Then the "guide" pairs orient and order the contigs into longer scaffolds.<p> 
-
-SYSTEM REQUIREMENTS <p>
+<b>SYSTEM REQUIREMENTS</b><p>
 (1)The software, written with Shell script, consists of C++ programs and Perl programs. The C programs have been precompiled and therefore could be directly executed. To run Perl program, perl and Bioperl modules should be installed on the system. 
 (2)The program requires SAM files as input file. HISAT2 or BWA should be installed on the system.<p>
 (3)P_RNA_scaffolder has been tested and is supported on Linux.<p>
-
-INPUT FILES <p>
+<b>INPUT FILES</b><p>
 (1)The SAM files are necessary for scaffolding. In eukaryotes, the SAM file was generated using HISAT2 program. In prokaryotes, the paired-end RNA-seq reads were aligned to the contigs using BWA program. <p>
-
 (i)Take human contigs and RNA-seq reads as an eukaryote example. The alignment of RNA-seq reads could be performed as follows: <p>
-
 hisat2-build contigs.fa human_hisat <p>
 hisat2 -x human_hisat -1 read_1.fq -2 read_2.fq -k 3 -p 10 --pen-noncansplice 1000000 -S input.sam <p>
-
 where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. <p>
 -k 3 means report up to 3 alignments per read. <p>
 -p 10 means using 10 threads to align reads. <p>
