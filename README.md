@@ -1,4 +1,4 @@
-DESCRIPTION <p>
+<b>DESCRIPTION</b><p>
    P_RNA_scaffolder is a genome scaffolding tool with paired-end RNA-seq reads from studied species. Since the nucleotide sequences are not conserved across species, P_RNA_scaffolder does not support using paired-end RNA-seq from close speciess to scaffold the genome of studied species. The paired-end RNA-seq reads could be downloaed from public read archive database (for instance, NCBI SRA database) or be your own data. The paired-end reads are aligned to contigs using HISAT2 or BWA firstly and then BLAT. The SAM alignment files by HISAT2 or BWA are used as the input files of P_RNA_scaffolder. P_RNA_scaffolder searches "guide" pairs, two reads of which were mapped to two different contigs. Then the "guide" pairs orient and order the contigs into longer scaffolds.<p> 
 <b>SYSTEM REQUIREMENTS</b><p>
 (1)The software, written with Shell script, consists of C++ programs and Perl programs. The C programs have been precompiled and therefore could be directly executed. To run Perl program, perl and Bioperl modules should be installed on the system. 
@@ -25,7 +25,7 @@ input.sam means that the alignments of all reads were stored in the file of 'inp
 
 (2)The contig file is also required and should be fasta format, consistent with the subject sequences when alignment. <p>
 
-COMMANDS AND OPTIONS <p>
+<b>COMMANDS AND OPTIONS</b><p>
    P_RNA_scaffolder is run via the shell script: P_RNA_scaffolder.sh found in the base installation directory.<p>
 
    Usage info is as follows:<p>
@@ -63,9 +63,7 @@ Scaffolding options <p>
                    set as 100000 while in C.elegans, it is set as 15000. <p> 
      -f            the minimal supporting RNA-seq pair number            [ default:       2 ] <p>
      -n            the number of inserted N to indicate a gap            [ default:  100 bp ] <p>
-
-OUTPUT FILES <p>
+<b>OUTPUT FILES</b><p>
    When P_RNA_scaffolder completes, it will create a P_RNA_scaffolder.fasta output file in the output_dir/ output directory.  <p>
-
-SPEED <p>
+<b>SPEED</b><p>
    P_RNA_scaffolder spent about 195 minutes in scaffolding human genome contigs with a SAM file generated from alignment of 113.8 millions of RNA-seq pairs. <p>
