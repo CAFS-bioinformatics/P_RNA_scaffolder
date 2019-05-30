@@ -5,9 +5,9 @@
 (2)The program requires SAM files as input file. HISAT2 or BWA should be installed on the system.<p>
 (3)P_RNA_scaffolder has been tested and is supported on Linux.<p>
 <b>INPUT FILES</b><p>
-(1)The SAM files are necessary for scaffolding. In eukaryotes, the SAM file was generated using HISAT2 program. In prokaryotes, the paired-end RNA-seq reads were aligned to the contigs using BWA program. <p>
+(1)The SAM files are necessary for scaffolding. In eukaryotes, the SAM file was generated using HISAT2 program. In prokaryotes, the paired-end RNA-seq reads were aligned to the contigs using BWA program.<p>
 (i)Take human contigs and RNA-seq reads as an eukaryote example. The alignment of RNA-seq reads could be performed as follows: <p>
-hisat2-build contigs.fa human_hisat <p>
+<I>hisat2-build contigs.fa human_hisat</I><p>
 hisat2 -x human_hisat -1 read_1.fq -2 read_2.fq -k 3 -p 10 --pen-noncansplice 1000000 -S input.sam <p>
 where read_1.fq and read_2.fq are the fastq files of two ends of RNA-seq reads. <p>
 -k 3 means report up to 3 alignments per read. <p>
@@ -29,7 +29,7 @@ input.sam means that the alignments of all reads were stored in the file of 'inp
    P_RNA_scaffolder is run via the shell script: P_RNA_scaffolder.sh found in the base installation directory.<p>
 
    Usage info is as follows:<p>
-sh P_RNA_scaffolder.sh -d Program_dir -i input.sam -j contig.fa -F read_1.fa -R read_2.fq
+<b>sh P_RNA_scaffolder.sh -d Program_dir -i input.sam -j contig.fa -F read_1.fa -R read_2.fq </b>
 
 Input options <p>
      -d           the installing direcotry of P_RNA_scaffolder           [        mandatory ] <p>
